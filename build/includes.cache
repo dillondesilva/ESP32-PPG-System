@@ -1,0 +1,27 @@
+[
+  {
+    "Sourcefile": null,
+    "Include": "",
+    "Includepath": "/Users/dillon/Library/Arduino15/packages/esp32/hardware/esp32/2.0.11/cores/esp32"
+  },
+  {
+    "Sourcefile": null,
+    "Include": "",
+    "Includepath": "/Users/dillon/Library/Arduino15/packages/esp32/hardware/esp32/2.0.11/variants/esp32"
+  },
+  {
+    "Sourcefile": "/Users/dillon/projects/esp32-ppg-system/build/sketch/main.ino.cpp",
+    "Include": "",
+    "Includepath": null
+  },
+  {
+    "Sourcefile": "/Users/dillon/projects/esp32-ppg-system/build/sketch/sensor_control.cpp",
+    "Include": "",
+    "Includepath": null
+  },
+  {
+    "Sourcefile": "/Users/dillon/projects/esp32-ppg-system/build/sketch/switch.cpp",
+    "Include": "",
+    "Includepath": null
+  }
+]
