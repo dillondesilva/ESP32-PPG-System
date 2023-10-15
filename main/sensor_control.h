@@ -13,9 +13,9 @@ class sensor_control {
         uint8_t _warning_led;
         uint8_t _ppg_sensor;
         sensor_control(uint8_t power_btn_pin, uint8_t warning_btn_pin, uint8_t pulse_rate_led_pin, uint8_t warning_light_pin, uint8_t ppg_sensor_pin);
-        void ppg_device_on_off(bool switch_value);
+        bool get_power_state();
         void led_pulse_rate_on_off();
-        void read_pulse_sensor();
+        uint8_t read_pulse_sensor();
 };
 #define __sensor_control__
 #endif
