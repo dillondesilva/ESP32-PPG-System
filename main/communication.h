@@ -1,12 +1,18 @@
-#include "communication.h"
+#include <iostream>
+#include <string>
+#include "BluetoothSerial.h"
 #ifndef __COMMUNICATION__
+
+using namespace std;
 
 class communication {
     public:
-        void communication(string btName);
-        uint8_t[] formatPacket(uint8_t raw_ppg_value);
-        bool send(string packet);
-}
+        BluetoothSerial serial_bt;
+        communication(char* ptr_bt_name);
+        void initialize_bluetooth();
+        char* formatPacket(uint8_t raw_ppg_value);
+        bool send(char data_packet[]);
+};
 
 #define __COMMUNICATION__
 #endif

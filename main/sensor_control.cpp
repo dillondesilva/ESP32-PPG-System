@@ -10,8 +10,10 @@ Description:
 
 sensor_control::sensor_control(uint8_t power_btn_pin, uint8_t warning_btn_pin, uint8_t pulse_rate_led_pin, uint8_t warning_light_pin, uint8_t ppg_sensor_pin)
 {
-    Switch _power_btn(power_btn_pin, 5);
-    Switch _warning_btn(5, 10);
+    static Switch power_btn(power_btn_pin, 5);
+    static Switch warning_btn(5, 10);
+    _power_btn = &(power_btn);
+    _warning_btn = &(warning_btn);
     _pulse_rate_led = pulse_rate_led_pin;
     _warning_led = warning_light_pin;
     _ppg_sensor = ppg_sensor_pin;
@@ -34,10 +36,17 @@ bool sensor_control::get_power_state() {
     return curr_power_state;
 }
 
+void sensor_control::flash_pulse_rate(bool is_changeable) {
+    if (is_changeable) {
+        int pin = sensor_control::_pulse_rate_led;
+        digitalWrite(pin, !digitalRead(pin));
+    }
+}
+
 void sensor_control::led_pulse_rate_on_off() {
 
 }
 
-uint8_t sensor_control::read_pulse_sensor() {
-    return uint8_t(analogRead(sensor_control::_pulse_rate_led));
+int sensor_control::read_pulse_sensor() {
+    return int(analogRead(sensor_control::_ppg_sensor));
 }

@@ -132,5 +132,15 @@
  /Users/dillon/Library/Arduino15/packages/esp32/hardware/esp32/2.0.11/tools/sdk/esp32/include/esp_hw_support/include/soc/esp32/spiram.h \
  /Users/dillon/Library/Arduino15/packages/esp32/hardware/esp32/2.0.11/cores/esp32/io_pin_remap.h \
  /Users/dillon/Library/Arduino15/packages/esp32/hardware/esp32/2.0.11/cores/esp32/Arduino.h \
+ /Users/dillon/projects/esp32-ppg-system/build/sketch/core.h \
+ /Users/dillon/projects/esp32-ppg-system/build/sketch/communication.h \
+ /Users/dillon/Library/Arduino15/packages/esp32/hardware/esp32/2.0.11/libraries/BluetoothSerial/src/BluetoothSerial.h \
+ /Users/dillon/Library/Arduino15/packages/esp32/hardware/esp32/2.0.11/tools/sdk/esp32/include/bt/host/bluedroid/api/include/api/esp_gap_bt_api.h \
+ /Users/dillon/Library/Arduino15/packages/esp32/hardware/esp32/2.0.11/tools/sdk/esp32/include/bt/host/bluedroid/api/include/api/esp_bt_defs.h \
+ /Users/dillon/Library/Arduino15/packages/esp32/hardware/esp32/2.0.11/tools/sdk/esp32/include/bt/host/bluedroid/api/include/api/esp_spp_api.h \
+ /Users/dillon/Library/Arduino15/packages/esp32/hardware/esp32/2.0.11/libraries/BluetoothSerial/src/BTScan.h \
+ /Users/dillon/Library/Arduino15/packages/esp32/hardware/esp32/2.0.11/cores/esp32/Print.h \
+ /Users/dillon/Library/Arduino15/packages/esp32/hardware/esp32/2.0.11/libraries/BluetoothSerial/src/BTAddress.h \
+ /Users/dillon/Library/Arduino15/packages/esp32/hardware/esp32/2.0.11/libraries/BluetoothSerial/src/BTAdvertisedDevice.h \
  /Users/dillon/projects/esp32-ppg-system/build/sketch/sensor_control.h \
  /Users/dillon/projects/esp32-ppg-system/build/sketch/switch.h
