@@ -2,6 +2,7 @@
 #include <Esp.h>
 #include <iostream>
 #include <string>
+#include <queue>
 #include "BluetoothSerial.h"
 #include "communication.h"
 
@@ -27,6 +28,12 @@ void communication::initialize_bluetooth()
     Serial.println("Bluetooth initialized");
     Serial.println("AwesomePPG");
   }
+}
+
+char[] communication::create_data_packet(queue<int> raw_ppg_vals, int bpm)
+{
+  char packet[64];
+  // Iterate over raw_ppg_vals and add it to packet
 }
 
 bool communication::send(char data_packet[]) 

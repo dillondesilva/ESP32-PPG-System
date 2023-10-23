@@ -12,6 +12,9 @@ class communication {
         void initialize_bluetooth();
         char* formatPacket(uint8_t raw_ppg_value);
         bool send(char data_packet[]);
+
+    private:
+        unsigned long packet_clock;
 };
 
 #define __COMMUNICATION__

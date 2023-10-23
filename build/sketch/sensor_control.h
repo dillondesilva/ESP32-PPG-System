@@ -8,7 +8,7 @@ Description:
 
 class sensor_control {
     public:
-        Switch* _power_btn;
+        Switch* _led_pulse_btn;
         Switch* _warning_btn;
         uint8_t _pulse_rate_led;
         uint8_t _warning_led;
@@ -17,6 +17,8 @@ class sensor_control {
         bool get_power_state();
         void flash_pulse_rate(bool is_changeable);
         void led_pulse_rate_on_off();
+        void warning_led_on();
+        void warning_led_off();
         int read_pulse_sensor();
 };
 #define __sensor_control__

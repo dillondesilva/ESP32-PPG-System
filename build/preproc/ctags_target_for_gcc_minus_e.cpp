@@ -8,10 +8,13 @@
 
 
 
+
+
+
 using namespace std;
 
 static communication comms((char *)"AwesomePPG");
-static sensor_control sensor_panel(34, 13, 25, 4, 27);
+static sensor_control sensor_panel(33, 32, 25, 26, 27);
 static core core_functions;
 
 void setup() {
@@ -25,17 +28,26 @@ void loop() {
     // {
         // Serial.println("Log: Device On");
         int pulse_value = sensor_panel.read_pulse_sensor();
-        core_functions.update_threshold(pulse_value);
-        bool pt_value = core_functions.update_pulse_train(pulse_value);
-        Serial.println(pt_value);
-        sensor_panel.flash_pulse_rate(pt_value);
+        // Serial.println(pulse_value);
+        bool is_pt_changed = core_functions.update_pulse_train(pulse_value);
+        // Serial.println(pt_value);
+        sensor_panel.led_pulse_rate_on_off();
+        if (digitalRead(33)) {
+            sensor_panel.flash_pulse_rate(is_pt_changed);
+        }
+
         int curr_bpm = core_functions.get_bpm();
+        if ((curr_bpm < 40) || (curr_bpm > 250)) {
+            sensor_panel.warning_led_on();
+        }
+        sensor_panel.warning_led_off();
+
         char bpm_data[4];
         sprintf(bpm_data, "%3d\n", curr_bpm);
-        comms.send(bpm_data);
+        // comms.send(bpm_data);
 
-        char data_packet[5];
-        sprintf(data_packet, "%4d\n", pulse_value);
+        // char data_packet[5];
+        // sprintf(data_packet, "%4d\n", pulse_value);
         // comms.send(data_packet);
         delay(20);
     // }
